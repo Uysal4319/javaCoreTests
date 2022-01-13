@@ -7,8 +7,7 @@ import java.util.Map;
 public class MapMergeTest {
 
     public static void main(String[] args) {
-
-
+    	
         ArrayList<String > list1 = new ArrayList<>();
         list1.add("12345");
         list1.add("6789");

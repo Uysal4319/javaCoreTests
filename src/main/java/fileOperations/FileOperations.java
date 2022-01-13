@@ -6,12 +6,11 @@ public class FileOperations {
 	
 	public static void main(String[] args) throws IOException {
 		File file = new File("src/main/resources/human.txt");
-		BufferedReader reader = new BufferedReader(new FileReader(file));
-		String         line = null;
-		StringBuilder  stringBuilder = new StringBuilder();
-		String         ls = System.getProperty("line.separator");
-		try {
-			while((line = reader.readLine()) != null) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+			String line = null;
+			StringBuilder stringBuilder = new StringBuilder();
+			String ls = System.getProperty("line.separator");
+			while ((line = reader.readLine()) != null) {
 				stringBuilder.append(line);
 				stringBuilder.append(ls);
 			}
@@ -19,19 +18,17 @@ public class FileOperations {
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
-		} finally {
-			reader.close();
 		}
 	}
 	
 	public static String loadHuman() throws IOException {
 		File file = new File("./resources/simFiles/human.txt");
 		BufferedReader reader = new BufferedReader(new FileReader(file));
-		String         line = null;
-		StringBuilder  stringBuilder = new StringBuilder();
-		String         ls = System.getProperty("line.separator");
+		String line = null;
+		StringBuilder stringBuilder = new StringBuilder();
+		String ls = System.getProperty("line.separator");
 		try {
-			while((line = reader.readLine()) != null) {
+			while ((line = reader.readLine()) != null) {
 				stringBuilder.append(line);
 				stringBuilder.append(ls);
 			}

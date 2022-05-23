@@ -1,6 +1,7 @@
 package formaters.jsonOperations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 public class Main {
 
@@ -18,6 +19,9 @@ public class Main {
             jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(student);
 
             System.out.println(jsonString);
+	
+            Gson gson = new Gson();
+			System.out.println("gson to json "+ gson.toJson(student));
         }catch (Exception e){
             e.printStackTrace();
         }

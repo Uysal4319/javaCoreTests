@@ -6,6 +6,7 @@ import java.util.Map;
 public class EnumTest {
 	
 	public static void main(String[] args) {
+		System.out.println(TestEnum.hello);
 		System.out.println(TestEnum.OPEN.getValue());
 		System.out.println(TestEnum.OPEN.toString());
 		System.out.println("ordinal: "+ TestEnum.OPEN.ordinal());

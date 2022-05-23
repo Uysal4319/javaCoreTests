@@ -55,7 +55,7 @@ public class Main {
 		File file = new File("music.txt");
 		try {
 			result = file.createNewFile();  //creates a new file  
-			if (result)      // test if successfully created a new file  
+			if (result)      // test.tiff if successfully created a new file  
 			{
 				System.out.println("file created " + file.getCanonicalPath()); //returns the path string  
 				

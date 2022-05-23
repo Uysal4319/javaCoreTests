@@ -13,7 +13,7 @@ public class StringOperation {
         String nullCheck = "";
 	
 		System.out.println(nullCheck.equalsIgnoreCase("nullCheck"));
-//		System.out.println(test.trim());
+//		System.out.println(test.tiff.trim());
 //		System.out.println("63/64 : " + (63/64));
 //        System.out.println(msisdnFormater("00994501234567"));
 //

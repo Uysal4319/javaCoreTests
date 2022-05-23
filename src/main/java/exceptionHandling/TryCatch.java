@@ -1,9 +1,12 @@
+package exceptionHandling;
+
 public class TryCatch {
 	
 	public static void main(String[] args) {
 //        whileTrue();
 //		catchOperation();
-		finallyScopeTest();
+//		finallyScopeTest();
+		nestedMethodTest();
 	}
 	
 	public static void finallyScopeTest() {
@@ -48,5 +51,32 @@ public class TryCatch {
 				killThread = true;
 			}
 		}
+	}
+	
+	public static void nestedMethodTest() {
+		try {
+			method1();
+		} catch (TestException | TestException2 e){
+			System.out.println("test.tiff pointer detected" + e);
+		}
+	}
+	
+	public static void method1() throws TestException, TestException2 {
+		method2();
+	}
+	
+	public static void method2() throws TestException, TestException2 {
+		try {
+			boolean flag = false;
+			if (flag) {
+				System.out.println("flag true");
+			} else {
+				System.out.println("Exception için girdik ");
+				throw new TestException();
+			}
+		}catch (Exception e){
+			System.out.println("Exception2 için girdik ");
+			throw new TestException2();
+		} 
 	}
 }

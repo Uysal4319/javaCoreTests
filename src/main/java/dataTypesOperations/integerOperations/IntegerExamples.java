@@ -4,7 +4,10 @@ public class IntegerExamples {
 	
 	public static void main(String[] args) {
 		
-		nullCast();
+//		nullCast();
+		String eksi = "-1";
+		int a = Integer.parseInt(eksi);
+		System.out.println(a*1024);
 	
 	}
 	

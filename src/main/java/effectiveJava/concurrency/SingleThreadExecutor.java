@@ -24,9 +24,9 @@ public class SingleThreadExecutor {
 	
 	public static void main(String[] args) throws InterruptedException {
 		long start = System.nanoTime();
-		CountDownLatch latch = new CountDownLatch(3);
+		CountDownLatch latch = new CountDownLatch(1);
 		ExecutorService executorService = Executors.newSingleThreadExecutor();
-		IntStream.range(0, 3).forEach(i -> {
+		IntStream.range(0, 1).forEach(i -> {
 			executorService.execute(new MyExecutor(latch));
 		});
 		executorService.shutdown();

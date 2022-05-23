@@ -18,7 +18,7 @@ public class CalenderTest {
 			Date dates=new Date(val);
 			SimpleDateFormat df2 = new SimpleDateFormat("MM/dd/yy hh:mm:ss");
 			String dateText = df2.format(dates);
-			System.out.println("formated: " + dateText);
+			System.out.println("formatted: " + dateText);
 	
 			System.out.println("formatted date : " + getFormattedDate("dd.MM.yyyy HH:mm:ss"));
 			

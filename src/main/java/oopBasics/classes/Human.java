@@ -8,7 +8,7 @@ public class Human {
 	String name;
 	
 	public Human() {
-	
+		// TODO document why this constructor is empty
 	}
 	
 	public int getAge() {
@@ -25,5 +25,13 @@ public class Human {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Human{" +
+				"age=" + age +
+				", name='" + name + '\'' +
+				'}';
 	}
 }

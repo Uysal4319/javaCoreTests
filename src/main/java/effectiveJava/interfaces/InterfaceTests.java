@@ -17,5 +17,8 @@ public class InterfaceTests {
 		Jcb jcb = new Jcb(1,7);
 		System.out.println(jcb.fuelCostCalculate());
 		
+		//interface ismi referans verilen initialize islemi
+		Transportation vehicle = (Transportation) new Vehicle(1,2);
+		vehicle.minPassengerCount();
 	}
 }

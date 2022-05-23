@@ -15,7 +15,8 @@ public class InnerClassTests {
 				System.out.println("hello");		
 			}
 		};
-		
 		anonymousClass.helloWorld();
+		AnonymousClass exampleAnonymous = new AnonymousClass();
+		
 	}
 }

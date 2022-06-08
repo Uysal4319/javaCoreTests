@@ -1,6 +1,6 @@
 package multiThread.concurrency;
 
-public class Main {
+public class ThreadCommunication {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -44,8 +44,7 @@ public class Main {
 
         Thread.sleep(5000);
 
-        // Interthread Communication
-
+        // Inter thread Communication
         Chat m = new Chat();
         new T1(m);
         new T2(m);

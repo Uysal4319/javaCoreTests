@@ -3,15 +3,15 @@ package dataTypesOperations.stringOperations;
 public class StringBuilderTest {
 	
 	public static void main(String[] args) {
-		System.out.println(getMnpDocTypeSearchStr());
+		System.out.println(getDocTypeSearchStr());
 	}
-	public static String getMnpDocTypeSearchStr(){
-		StringBuilder mnpDocTypeStr = new StringBuilder();
-		mnpDocTypeStr.append("Hello").append("^");
-		mnpDocTypeStr.append("World").append("^");
-		mnpDocTypeStr.append("I").append("^");
-		mnpDocTypeStr.append("Am").append("^");
-		mnpDocTypeStr.append("Ertugrul");
-		return mnpDocTypeStr.toString();
+	public static String getDocTypeSearchStr(){
+		StringBuilder docTypeStr = new StringBuilder();
+		docTypeStr.append("Hello").append("^");
+		docTypeStr.append("World").append("^");
+		docTypeStr.append("I").append("^");
+		docTypeStr.append("Am").append("^");
+		docTypeStr.append("Ertugrul");
+		return docTypeStr.toString();
 	}
 }

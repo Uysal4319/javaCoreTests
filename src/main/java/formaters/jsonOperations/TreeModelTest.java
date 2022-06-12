@@ -35,10 +35,7 @@ public class TreeModelTest {
             }
 
             System.out.println("]");
-        }
-        catch (JsonParseException e) { e.printStackTrace(); }
-        catch (JsonMappingException e) { e.printStackTrace(); }
-        catch (IOException e) { e.printStackTrace(); }
-    }
+        } catch (IOException e) { e.printStackTrace(); }
+	}
 
 }

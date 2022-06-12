@@ -16,7 +16,7 @@ public class ObjectToXmlString {
 		System.out.println(convertObjToXmlString(human));
 	}
 	public static String convertObjToXmlString(Object res) {
-		System.out.println("<ebsMnpOperations,convertHumanObjToXmlString> xml preparation started.");
+		System.out.println("<convertHumanObjToXmlString> xml preparation started.");
 		String xmlString = "";
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(Human.class);

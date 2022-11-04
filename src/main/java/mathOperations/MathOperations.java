@@ -10,5 +10,7 @@ public class MathOperations {
 		System.out.println(accumulatedDurationRoundedToSec);
 		
 		System.out.println((((10 - 20) - 5) * 100) / 10);
+		
+		System.out.println("0%499 = " + 501 % 500);
 	}
 }

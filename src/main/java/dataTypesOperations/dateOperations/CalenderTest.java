@@ -16,7 +16,8 @@ public class CalenderTest {
 	
 			long val = today.getTimeInMillis();
 			Date dates=new Date(val);
-			SimpleDateFormat df2 = new SimpleDateFormat("MM/dd/yy hh:mm:ss");
+//			SimpleDateFormat df2 = new SimpleDateFormat("MM/dd/yy hh:mm:ss");
+			SimpleDateFormat df2 = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 			String dateText = df2.format(dates);
 			System.out.println("formatted: " + dateText);
 	
@@ -54,5 +55,7 @@ public class CalenderTest {
 		}
 		return date.toString();
 	}
+	
+	
 }
 

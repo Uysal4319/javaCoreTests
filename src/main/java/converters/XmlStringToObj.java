@@ -1,48 +1,42 @@
 package converters;
 
 import oopBasics.classes.Human;
+import utils.TestUtilities;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import java.io.*;
+import javax.xml.transform.Source;
+import java.io.File;
 
 public class XmlStringToObj {
 	
 	public static void main(String[] args) {
 		File file = new File("src/main/resources/human.txt");
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-			String line = null;
-			StringBuilder stringBuilder = new StringBuilder();
-			String ls = System.getProperty("line.separator");
-			while ((line = reader.readLine()) != null) {
-				stringBuilder.append(line);
-				stringBuilder.append(ls);
-			}
-			System.out.println(stringBuilder.toString());
-			Human human = createHuman(stringBuilder.toString());
-			
-			System.out.println(human.toString());		
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-		
+		String string = TestUtilities.getFileContent(file);
+		System.out.println(string);
+		Human human = createHuman(string);
+		System.out.println(human.toString());
 	}
 	
 	public static Human createHuman(String human) {
-		JAXBContext jaxbContext;
-		Human orderDetails = null;
+		Human humanObj = null;
 		if (human != null && !human.isEmpty()) {
 			try {
-				jaxbContext = JAXBContext.newInstance(Human.class);
-				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-				orderDetails = (Human) jaxbUnmarshaller.unmarshal(new StringReader(human));
-				return orderDetails;
+				Source source = TestUtilities.disabledXXESource(human);
+				JAXBContext jc = JAXBContext.newInstance(Human.class);
+				Unmarshaller um = jc.createUnmarshaller();
+				humanObj = (Human) um.unmarshal(source);
+
+//				jaxbContext = JAXBContext.newInstance(Human.class);
+//				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+//				orderDetails = (Human) jaxbUnmarshaller.unmarshal(new StringReader(human));
+				
+				return humanObj;
 			} catch (JAXBException e) {
 				System.out.println("Order Details xml to object operation error." + e);
 			}
 		}
-		return orderDetails;
+		return humanObj;
 	}
 }

@@ -7,7 +7,7 @@ public class ObjectFactory {
 	public ObjectFactory() {
 	}
 	
-	public Student createNPMessages() {
+	public Student createStudent() {
 		return new Student();
 	}
 	

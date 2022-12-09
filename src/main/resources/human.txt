@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <human>
     <age>20</age>
-    <name>ertugrul</name>
-    <surname>uysal</surname>
+    <name>jake</name>
+    <surname>jain</surname>
+    <country>TR</country>
 </human>

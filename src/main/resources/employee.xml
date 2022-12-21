@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
-<employee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<employee>
     <id>1</id>
     <name>jackie</name>
     <surName>Chan</surName>
     <age>68</age>
     <birthDay>1954-04-07</birthDay>
     <department>Actor</department>
+    <priceHeader>
+        <priceName>NET</priceName>
+    </priceHeader>
 </employee>  

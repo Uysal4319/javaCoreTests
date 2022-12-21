@@ -9,7 +9,13 @@
                 <xs:element name="age" type="xs:int"/>
                 <xs:element name="birthDay" type="xs:date"/>
                 <xs:element name="department" type="xs:string"/>
+                <xs:element name="priceHeader" type="PriceType"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:complexType name="PriceType">
+        <xs:sequence>
+            <xs:element name="priceName" type="xs:string" minOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema> 

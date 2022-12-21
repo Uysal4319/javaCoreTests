@@ -18,7 +18,7 @@ public class Encrypter {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(getInstance().doEncrypt("user", "user_pass"));
+		System.out.println(getInstance().doEncrypt("admin", "admin"));
 	}
 	
 	public String doEncrypt(String userName, String pwd) {
@@ -51,17 +51,18 @@ public class Encrypter {
 	
 	private Cipher getCipher(boolean encryptMode) {
 		try {
-			SecretKeySpec keySpec = new SecretKeySpec("Pass_321Pass_321".getBytes(StandardCharsets.UTF_8), "AES");
-			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-			AlgorithmParameterSpec paramSpec = new IvParameterSpec(new byte[cipher.getBlockSize()]);
-//			SecretKeySpec keySpec = new SecretKeySpec(Pass_321.getBytes(ENCODING), "DES");
-//			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
-//		
-//			byte[] iv = new byte[]{
-//					(byte) 0x8E, 0x12, 0x39, (byte) 0x9C,
-//					0x07, 0x72, 0x6F, 0x5A
-//			};
-//			AlgorithmParameterSpec paramSpec = new IvParameterSpec(iv);
+//			SecretKeySpec keySpec = new SecretKeySpec("Pass_321Pass_321".getBytes(StandardCharsets.UTF_8), "AES");
+//			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+//			AlgorithmParameterSpec paramSpec = new IvParameterSpec(new byte[cipher.getBlockSize()]);
+			
+			SecretKeySpec keySpec = new SecretKeySpec("kl_090tr".getBytes("UTF-8"), "DES");
+			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+
+			byte[] iv = new byte[]{
+					(byte) 0x8E, 0x12, 0x39, (byte) 0x9C,
+					0x07, 0x72, 0x6F, 0x5A
+			};
+			AlgorithmParameterSpec paramSpec = new IvParameterSpec(iv);
 			
 			if (encryptMode) {
 				cipher.init(Cipher.ENCRYPT_MODE, keySpec, paramSpec);

@@ -13,6 +13,10 @@ import java.io.File;
 
 public class XXEWithSchemaFactory {
 	public static void main(String[] args) {
+		parseEmployee();
+	}
+	
+	public static void parseEmployee() {
 		try {
 			// Create a SchemaFactory instance for the XML schema language
 			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -46,9 +50,7 @@ public class XXEWithSchemaFactory {
 			System.out.println(employee);
 			System.out.println(employee1);
 			
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (JAXBException e) {
+		} catch (SAXException | JAXBException e) {
 			e.printStackTrace();
 		}
 	}

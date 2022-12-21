@@ -11,6 +11,7 @@ public class Employee {
 	private int age;
 	private Date birthDay;
 	private String department;
+	private PriceType priceHeader;
 	
 	public Employee() {
 	}
@@ -63,6 +64,14 @@ public class Employee {
 		this.department = department;
 	}
 	
+	public PriceType getPriceHeader() {
+		return priceHeader;
+	}
+	
+	public void setPriceHeader(PriceType priceHeader) {
+		this.priceHeader = priceHeader;
+	}
+	
 	@Override
 	public String toString() {
 		return "Employee{" +
@@ -72,6 +81,7 @@ public class Employee {
 				", age=" + age +
 				", birthDay=" + birthDay +
 				", department='" + department + '\'' +
+				", priceType=" + priceHeader +
 				'}';
 	}
 }

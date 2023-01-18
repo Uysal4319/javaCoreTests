@@ -4,6 +4,7 @@ public class IndexOperations {
 	
 	public static void main(String[] args) {
 		System.out.println(getDocTypeValue("Hello World"));	
+		getNotExistIndex();
 	}
 	public static String getDocTypeValue(String Bundle) {
 		String docTypeValue = null;
@@ -20,5 +21,10 @@ public class IndexOperations {
 			docTypeValue = "4";
 		}
 		return docTypeValue;
+	}
+	
+	public static void getNotExistIndex(){
+		String string= "5";
+		System.out.println(string.indexOf("o"));
 	}
 }

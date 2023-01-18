@@ -19,7 +19,7 @@ public class DataBinding {
 		s1.setAge(15);
 		
 		studentMap.put("student", s1);
-		studentMap.put("surname", "Uysal");
+		studentMap.put("surname", "Tekin");
 		studentMap.put("verified", Boolean.FALSE);
 		studentMap.put("marks", marks);
 		

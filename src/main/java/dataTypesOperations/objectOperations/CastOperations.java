@@ -10,11 +10,10 @@ public class CastOperations {
 	
 //		formaters.jsonOperations.Student student = (formaters.jsonOperations.Student) human;
     	
-        int uysal = 128;
-        byte ertu = (byte) uysal;
-        System.out.println(ertu);
-
-
+        int intValue = 128;
+        byte byteValue = (byte) intValue;
+        System.out.println(byteValue);
+        
         long imsi = 286032154;
         String test = String.valueOf(imsi);
         System.out.println(test);

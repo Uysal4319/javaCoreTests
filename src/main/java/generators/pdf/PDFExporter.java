@@ -121,7 +121,7 @@ public class PDFExporter implements Serializable {
 		xmlDoc.setRootElement(rootElement);
 		rootElement.addContent(new Element("department").setText("Software"));
 		rootElement.addContent(new Element("name").setText("Ertu"));
-		rootElement.addContent(new Element("surname").setText("Uysal"));
+		rootElement.addContent(new Element("surname").setText("Tekin"));
 		rootElement.addContent(new Element("office").setText("İstanbul"));
 		rootElement.addContent(new Element("fatherName").setText("babaisimi"));
 		rootElement.addContent(new Element("phone").setText("5025024145"));

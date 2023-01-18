@@ -1,7 +1,8 @@
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Test {
 	
@@ -26,7 +27,7 @@ public class Test {
 		String s1 = new String("hello");
 		String s2 = new String("hello");
 		
-		if(s1 == s2 )
+		if (s1.equals(s2))
 			System.out.println("equal");
 		else
 			System.out.println("not equal");

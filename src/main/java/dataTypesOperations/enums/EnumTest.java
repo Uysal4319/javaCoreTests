@@ -6,36 +6,43 @@ import java.util.Map;
 public class EnumTest {
 	
 	public static void main(String[] args) {
-		System.out.println(TestEnum.hello);
-		System.out.println(TestEnum.OPEN.getValue());
-		System.out.println(TestEnum.OPEN.toString());
-		System.out.println("ordinal: "+ TestEnum.OPEN.ordinal());
+//		printEnumAttributes();
+//		testEnumMapOperation();
+//		performanceCauses();
+		enumGetName();
 		
+	}
+	
+	public static void enumGetName(){
+		System.out.println(Status.getByName("OPEN"));
+	}
+	public static void printEnumAttributes() {
+		System.out.println(Status.hello);
+		System.out.println(Status.OPEN.getValue());
+		System.out.println(Status.OPEN.toString());
+		System.out.println("ordinal: " + Status.OPEN.ordinal());
 		System.out.println("Operator : " + getOperatorCode(1));
 		System.out.println(AnimalConstants.AnimalFeedType.MEAT_BYPRODUCTS.toString());
 		
 		System.out.println(AnimalConstants.TypesOfCats.BENGAL_CAT.toString());
-		
+	}
+	
+	public static void testEnumMapOperation(){
 		Map<String,String> map = new HashMap<>();
 		map.put("follow_laser","PET");
 		map.put("catch_plate","true");
 		
 		if (map.get(AnimalConstants.AnimalTalentNames.follow_laser.toString()).equals(AnimalConstants.AnimalTypes.PET.toString())) {
 			System.out.println("True map enum");
-		} 
+		}
 		if (map.get(AnimalConstants.AnimalTalentNames.catch_plate.name()).equalsIgnoreCase(AnimalConstants.trueString)){
 			System.out.println("catch_plate : true");
 		}
 		
 		Classification.getClassificationsMap();
 		Classification.getClassificationsMap();
-		
-		performanceCauses();
-		
 		System.out.println("catch_plate : " + AnimalConstants.AnimalTalentNames.catch_plate);
-			
 	}
-	
 	public static void performanceCauses() {
 		long startTimeFetchMap = System.currentTimeMillis();
 		Kpi.fetchCauseKpiIdMap();

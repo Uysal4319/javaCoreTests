@@ -1,6 +1,6 @@
 package dataTypesOperations.enums;
 
-public enum TestEnum {
+public enum Status {
 
     OPEN(-1), CLOSE(0), ONLY_FAIL(1);
     
@@ -8,11 +8,21 @@ public enum TestEnum {
 
     private final int value;
 
-    TestEnum(int value) {
+    Status(int value) {
         this.value = value;
     }
 
     public int getValue() {
         return value;
     }
+	
+	public static Status getByName(String name) {
+		Status[] test = Status.values();
+		for (Status status : test) {
+			if (name.equals(status.name())) {
+				return status;
+			}
+		}
+		return null;
+	}
 }

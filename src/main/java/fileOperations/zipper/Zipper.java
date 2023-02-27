@@ -19,13 +19,10 @@ public class Zipper {
 	}
 	
 	public static void zip(String fileTobeZipped) throws Exception {
-		// input file 
 		FileInputStream in = new FileInputStream(fileTobeZipped);
-		
-		// out put file 
 		ZipOutputStream out = new ZipOutputStream(new FileOutputStream(fileTobeZipped + "_out" + ".zip"));
 		
-		// name the file inside the zip  file 
+		// name the file inside the zipfile 
 		out.putNextEntry(new ZipEntry(splitSlash(fileTobeZipped)));
 		//out.setLevel(1);
 		// buffer size
@@ -64,6 +61,23 @@ public class Zipper {
 		File real = new File(fileTobeZipped + "_out" + ".gz");
 		tmp.renameTo(real);
 //		new File(fileTobeZipped).delete();
+	}
+	
+	public static void tarGZip(String fileTobeZipped) throws Exception {
+		FileInputStream in = new FileInputStream(fileTobeZipped);
+		
+		// out put file 
+		GZIPOutputStream out = new GZIPOutputStream(new FileOutputStream(fileTobeZipped + ".gz"));
+		
+		byte[] b = new byte[1024];
+		int count;
+		
+		while ((count = in.read(b)) > 0) {
+			
+			out.write(b, 0, count);
+		}
+		out.close();
+		in.close();
 	}
 	
 	private static String splitSlash(String filePath) {

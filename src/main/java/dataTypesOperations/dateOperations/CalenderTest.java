@@ -3,18 +3,20 @@ package dataTypesOperations.dateOperations;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class CalenderTest {
 
     public static void main(String[] args) {
-		createCustomCalendar();
+//		createCustomCalendar();
 //      parseSDF();
 //      calendarToDate();
 //		compareCalendar();
-//		iterateCalendar();
+		iterateCalendar();
     }
     public  static void iterateCalendar(){
-		Calendar today = Calendar.getInstance();
+		Calendar today = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+//		Calendar today = Calendar.getInstance();
 		System.out.println("today: " + today.getTime());
 	
 		today.add(Calendar.DAY_OF_MONTH, 4);

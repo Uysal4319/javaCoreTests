@@ -9,7 +9,8 @@ public class ListOperations {
 		List<String> list = new ArrayList<String>();
 		
 		String[] array = null;
-		if (!list.isEmpty()) {
+		boolean empty = list.isEmpty();
+		if (!empty) {
 			array = list.toArray(new String[0]);
 			System.out.println(array[0] + " " + array[1] + " " + array[2]);
 		}

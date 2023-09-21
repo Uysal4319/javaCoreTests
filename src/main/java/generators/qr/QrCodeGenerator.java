@@ -37,6 +37,7 @@ public class QrCodeGenerator {
 	
 	public static String getLocation(String coordinate) {
 		try {
+			System.out.println("request arrived.");
 			int width = 300;
 			int height = 300;
 			String fileType = "png";
